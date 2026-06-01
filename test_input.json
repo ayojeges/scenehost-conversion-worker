@@ -1,0 +1,13 @@
+{
+  "input": {
+    "jobId": "local-test-job",
+    "sceneId": "local-test-scene",
+    "inputType": "dry_run",
+    "inputUrls": [],
+    "outputPrefix": "scenes/local-test-scene/outputs/",
+    "webhookUrl": "",
+    "options": {
+      "targetFormat": "compressed_splat"
+    }
+  }
+}
