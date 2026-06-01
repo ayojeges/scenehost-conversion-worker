@@ -44,5 +44,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/scenehost-conversion:latest
-            ghcr.io/${{ github.repository_owner }}/scenehost-conversion:${{ github.sha }}
+            ghcr.io/${{ github.repository_owner }}/scenehost-conversion-worker:latest
+            ghcr.io/${{ github.repository_owner }}/scenehost-conversion-worker:${{ github.sha }}
