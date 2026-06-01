@@ -561,6 +561,9 @@ def ensure_colmap_scene(source_dir):
     database_path = source_dir / "colmap.db"
     sparse_dir = source_dir / "sparse"
     sparse_dir.mkdir(parents=True, exist_ok=True)
+    sift_threads = os.environ.get("SCENEHOST_COLMAP_SIFT_THREADS", "4")
+    sift_max_image_size = os.environ.get("SCENEHOST_COLMAP_MAX_IMAGE_SIZE", "1200")
+    sift_max_features = os.environ.get("SCENEHOST_COLMAP_MAX_FEATURES", "8192")
 
     run_command([
         "colmap",
@@ -573,6 +576,12 @@ def ensure_colmap_scene(source_dir):
         "1",
         "--SiftExtraction.use_gpu",
         "0",
+        "--SiftExtraction.num_threads",
+        sift_threads,
+        "--SiftExtraction.max_image_size",
+        sift_max_image_size,
+        "--SiftExtraction.max_num_features",
+        sift_max_features,
     ])
     run_command([
         "colmap",
